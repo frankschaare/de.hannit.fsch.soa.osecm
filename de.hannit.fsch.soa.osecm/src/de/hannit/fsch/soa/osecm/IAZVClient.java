@@ -3,7 +3,8 @@
  */
 package de.hannit.fsch.soa.osecm;
 
-import java.util.List;
+import org.w3c.dom.Document;
+
 
 /**
  * @author fsch
@@ -12,11 +13,13 @@ import java.util.List;
 public interface IAZVClient
 {
 public static final String JOB_GETSERVERINFO = "krn.GetServerInfo";
+public static final String JOB_GETRESULTLIST = "dms.GetResultList";
 public static final String PARAMETER_INTEGER_FLAGS = "Flags";	
 public static final String PARAMETER_INTEGER_INFO = "Info";
 public static final String PARAMETER_STZRING_ENCODING = "Encoding";	
 	
 public String getServiceInfo();
 public String getServerInfo();
-public List<?> getResultList();
+public Exception setAZVRequest(String berichtsMonat, String berichtsJahr);
+public Document getResultList();
 }
